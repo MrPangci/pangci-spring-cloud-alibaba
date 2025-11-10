@@ -7,6 +7,11 @@
     <groupId>com.pangci</groupId>
     <artifactId>pangci-spring-cloud-alibaba</artifactId>
     <version>${revision}</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>pangci-common</module>
+        <module>pangci-user</module>
+    </modules>
 
     <properties>
         <revision>1.0.0</revision>
@@ -22,6 +27,7 @@
         <spring.cloud-alibaba.version>2025.0.0.0</spring.cloud-alibaba.version>
         <spring.boot.test.version>3.5.4</spring.boot.test.version>
         <lombok.version>1.18.30</lombok.version>
+        <flatten-maven-plugin.version>1.6.0</flatten-maven-plugin.version>
 
     </properties>
 
@@ -66,5 +72,37 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <!-- flatten-maven-plugin，可处理子项目打包无法读取到父项目参数化的版本号 - begin -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>${flatten-maven-plugin.version}</version>
+                <configuration>
+                    <updatePomFile>true</updatePomFile>
+                    <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- flatten-maven-plugin，可处理子项目打包无法读取到父项目参数化的版本号 - end -->
+        </plugins>
+    </build>
 
 </project>

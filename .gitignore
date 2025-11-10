@@ -9,6 +9,13 @@ target/
 *.iws
 *.iml
 *.ipr
+#项目测试路径
+/*/src/test
+#项目打包路径
+/*/target
+#临时pom文件
+.flattened-pom.xml
+/.flattened-pom.xml
 
 ### Eclipse ###
 .apt_generated
