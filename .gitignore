@@ -11,11 +11,14 @@ target/
 *.ipr
 #项目测试路径
 /*/src/test
+/*/*/src/test
 #项目打包路径
 /*/target
+/*/*/target
 #临时pom文件
 .flattened-pom.xml
 /.flattened-pom.xml
+/*/.flattened-pom.xml
 
 ### Eclipse ###
 .apt_generated

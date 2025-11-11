@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>com.pangci</groupId>
-            <artifactId>pangci-common</artifactId>
+            <artifactId>pangci-common-core</artifactId>
             <version>${revision}</version>
         </dependency>
     </dependencies>

@@ -5,17 +5,19 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.pangci</groupId>
-        <artifactId>pangci-spring-cloud-alibaba</artifactId>
+        <artifactId>pangci-common-modules</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <artifactId>pangci-common</artifactId>
+    <artifactId>pangci-common-core</artifactId>
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

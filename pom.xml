@@ -9,7 +9,7 @@
     <version>${revision}</version>
     <packaging>pom</packaging>
     <modules>
-        <module>pangci-common</module>
+        <module>pangci-common-modules</module>
         <module>pangci-user</module>
     </modules>
 

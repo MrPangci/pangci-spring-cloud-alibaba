@@ -1,4 +1,4 @@
-package com.pangci.common.model;
+package com.pangci.commom.core;
 
 public class ResultMessage<T> {
     private Integer code;
