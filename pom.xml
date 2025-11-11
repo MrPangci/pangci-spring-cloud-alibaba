@@ -11,6 +11,7 @@
     <modules>
         <module>pangci-common-modules</module>
         <module>pangci-user</module>
+        <module>pangci-api</module>
     </modules>
 
     <properties>
