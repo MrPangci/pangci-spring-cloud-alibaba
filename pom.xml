@@ -11,6 +11,8 @@
     <modules>
         <module>pangci-framework</module>
         <module>pangci-module-user</module>
+        <module>pangci-gateway</module>
+        <module>pangci-module-ai</module>
     </modules>
 
     <properties>
@@ -26,9 +28,9 @@
         <spring.cloud.version>2025.0.0</spring.cloud.version>
         <spring.cloud-alibaba.version>2025.0.0.0</spring.cloud-alibaba.version>
         <spring.boot.test.version>3.5.4</spring.boot.test.version>
-        <lombok.version>1.18.30</lombok.version>
-        <flatten-maven-plugin.version>1.6.0</flatten-maven-plugin.version>
-
+        <lombok.version>1.18.38</lombok.version>
+        <flatten-maven-plugin.version>1.7.0</flatten-maven-plugin.version>
+        <swagger.version>2.2.32</swagger.version>
     </properties>
 
     <dependencyManagement>
@@ -69,6 +71,12 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
                 <optional>true</optional>
+            </dependency>
+            <!-- swagger -->
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

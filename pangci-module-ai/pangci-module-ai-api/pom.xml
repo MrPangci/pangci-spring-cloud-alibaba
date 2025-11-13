@@ -5,18 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.pangci</groupId>
-        <artifactId>pangci-framework</artifactId>
+        <artifactId>pangci-module-ai</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <artifactId>pangci-common</artifactId>
-
-    <dependencies>
-        <!-- lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-    </dependencies>
+    <artifactId>pangci-module-ai-api</artifactId>
 
 </project>

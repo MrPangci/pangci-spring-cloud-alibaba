@@ -5,28 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.pangci</groupId>
-        <artifactId>pangci-module-user</artifactId>
+        <artifactId>pangci-spring-cloud-alibaba</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <artifactId>pangci-module-user-server</artifactId>
+    <artifactId>pangci-gateway</artifactId>
 
     <dependencies>
-
         <dependency>
             <groupId>com.pangci</groupId>
-            <artifactId>pangci-module-user-api</artifactId>
+            <artifactId>pangci-common</artifactId>
             <version>${revision}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
 
         <dependency>
@@ -54,6 +43,20 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
+
+        <!-- 网关 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+
+        <!-- openfeign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+
     </dependencies>
 
     <build>

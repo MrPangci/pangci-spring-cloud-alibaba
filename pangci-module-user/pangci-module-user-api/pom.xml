@@ -11,4 +11,30 @@
 
     <artifactId>pangci-module-user-api</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.pangci</groupId>
+            <artifactId>pangci-common</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <!-- Web 相关 -->
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- openfeign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!-- 参数校验 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
 </project>

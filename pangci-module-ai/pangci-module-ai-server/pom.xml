@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.pangci</groupId>
-        <artifactId>pangci-module-user</artifactId>
+        <artifactId>pangci-module-ai</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <artifactId>pangci-module-user-server</artifactId>
+    <artifactId>pangci-module-ai-server</artifactId>
 
     <dependencies>
 
@@ -53,6 +53,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+
+        <!-- openfeign -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
     </dependencies>
 

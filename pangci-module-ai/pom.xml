@@ -5,18 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.pangci</groupId>
-        <artifactId>pangci-framework</artifactId>
+        <artifactId>pangci-spring-cloud-alibaba</artifactId>
         <version>${revision}</version>
     </parent>
 
-    <artifactId>pangci-common</artifactId>
+    <artifactId>pangci-module-ai</artifactId>
+    <packaging>pom</packaging>
 
-    <dependencies>
-        <!-- lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-    </dependencies>
+    <modules>
+        <module>pangci-module-ai-api</module>
+        <module>pangci-module-ai-server</module>
+    </modules>
 
 </project>
