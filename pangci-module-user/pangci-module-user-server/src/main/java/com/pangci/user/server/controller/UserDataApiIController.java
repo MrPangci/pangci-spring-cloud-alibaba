@@ -1,5 +1,7 @@
 package com.pangci.user.server.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.pangci.commom.ResultMessage;
 import com.pangci.user.api.user.UserDataApi;
 import com.pangci.user.api.user.dto.UserDataRespDTO;
@@ -10,9 +12,20 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 public class UserDataApiIController implements UserDataApi {
     @Override
+    @SentinelResource( value = "getUserDataSentinel", blockHandler = "getUserDataSentinel")
     public ResultMessage<UserDataRespDTO> getUserData(String userId) {
         UserDataRespDTO userDataRespDTO = new UserDataRespDTO();
         userDataRespDTO.setUserName("张三"+userId);
         return new ResultMessage<>(200,"成功",userDataRespDTO);
+    }
+
+    /**
+     * Sentinel限流降级处理
+     * @param userId
+     * @param e
+     * @return
+     */
+    public ResultMessage<UserDataRespDTO> getUserDataSentinel(String userId, BlockException  e){
+        return new ResultMessage<>(500,"getUserDataSentinel不可用{}"+e.getMessage(),new UserDataRespDTO());
     }
 }
