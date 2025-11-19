@@ -31,6 +31,7 @@
         <lombok.version>1.18.38</lombok.version>
         <flatten-maven-plugin.version>1.7.0</flatten-maven-plugin.version>
         <swagger.version>2.2.32</swagger.version>
+        <hutool-5.version>5.8.38</hutool-5.version>
     </properties>
 
     <dependencyManagement>
@@ -77,6 +78,13 @@
                 <groupId>io.swagger.core.v3</groupId>
                 <artifactId>swagger-annotations</artifactId>
                 <version>${swagger.version}</version>
+            </dependency>
+
+            <!-- hutool -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-5.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

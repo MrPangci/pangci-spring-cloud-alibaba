@@ -6,10 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
-@ComponentScan(basePackages = {
-        "com.pangci.ai.server",
-        "com.pangci.*.api"// 添加外部 fallback 类所在包
-})
+@ComponentScan(basePackages = "com.pangci")
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients(basePackages = "com.pangci.*.api")

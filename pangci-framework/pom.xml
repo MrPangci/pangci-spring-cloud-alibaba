@@ -14,7 +14,7 @@
 
     <modules>
         <module>pangci-common</module>
-        <module>pangci-redis-starter</module>
+        <module>pangci-starter-redis</module>
     </modules>
 
 </project>
