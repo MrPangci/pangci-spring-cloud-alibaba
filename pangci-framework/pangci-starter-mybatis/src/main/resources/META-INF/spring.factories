@@ -1,0 +1,4 @@
+org.springframework.boot.env.EnvironmentPostProcessor=\
+  com.pangci.starter.mybatis.config.IdTypeEnvironmentPostProcessor
+org.springframework.boot.autoconfigure.AutoConfiguration=\
+  com.pangci.starter.mybatis.config.MybatisAutoConfiguration

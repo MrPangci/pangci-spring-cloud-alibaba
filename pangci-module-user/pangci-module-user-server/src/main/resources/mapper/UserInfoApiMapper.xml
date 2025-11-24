@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace = 接口的全限定符 -->
+<mapper namespace="com.pangci.user.server.mapper.UserInfoApiMapper">
+    <sql id="FIELDS">
+        user_id, user_name, login_name, create_time
+    </sql>
+    <select id="getUserBaseInfo" resultType="com.pangci.user.api.user.dto.UserInfoRespDTO">
+        select
+            <include refid="FIELDS"/>
+        from user_info where user_id=#{userId}
+    </select>
+
+</mapper>

@@ -1,4 +1,4 @@
-package com.pangci.commom;
+package com.pangci.commom.pojo;
 
 public class ResultMessage<T> {
     private Integer code;

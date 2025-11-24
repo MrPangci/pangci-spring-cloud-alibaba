@@ -15,6 +15,7 @@
     <modules>
         <module>pangci-common</module>
         <module>pangci-starter-redis</module>
+        <module>pangci-starter-mybatis</module>
     </modules>
 
 </project>

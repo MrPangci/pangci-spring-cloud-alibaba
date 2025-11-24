@@ -1,7 +1,7 @@
 package com.pangci.ai.server.controller;
 
-import com.pangci.commom.ResultMessage;
-import com.pangci.user.api.user.UserDataApi;
+import com.pangci.commom.pojo.ResultMessage;
+import com.pangci.user.api.user.UserInfoApi;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class AiTestController {
 
     @Resource
-    private UserDataApi userDataApi;
+    private UserInfoApi userInfoApi;
 
     @RequestMapping("/aiTest")
     public ResultMessage aiTest(){
-        return userDataApi.getUserData("2345");
+        return userInfoApi.getUserBaseInfo(1);
     }
 }

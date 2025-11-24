@@ -32,6 +32,13 @@
         <flatten-maven-plugin.version>1.7.0</flatten-maven-plugin.version>
         <swagger.version>2.2.32</swagger.version>
         <hutool-5.version>5.8.38</hutool-5.version>
+        <druid.version>1.2.24</druid.version>
+        <mysql.version>8.4.0</mysql.version>
+        <mybatis-plus.version>3.5.14</mybatis-plus.version>
+        <jsqlparser.version>3.5.14</jsqlparser.version>
+        <dynamic.version>4.3.1</dynamic.version>
+        <caffeine.version>3.2.1</caffeine.version>
+        <fhs-opensource.version>3.0.6</fhs-opensource.version>
     </properties>
 
     <dependencyManagement>
@@ -85,6 +92,52 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool-5.version}</version>
+            </dependency>
+            <!-- druid链接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!-- mysql数据库驱动 -->
+            <dependency>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!-- mybatis-plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-jsqlparser</artifactId>
+                <version>${jsqlparser.version}</version>
+            </dependency>
+            <!-- 多数据源 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
+                <version>${dynamic.version}</version>
+            </dependency>
+            <!-- caffeine缓存 -->
+            <dependency>
+                <groupId>com.github.ben-manes.caffeine</groupId>
+                <artifactId>caffeine</artifactId>
+                <version>${caffeine.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fhs-opensource</groupId> <!-- VO 数据翻译 -->
+                <artifactId>easy-trans-spring-boot-starter</artifactId>
+                <version>${fhs-opensource.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fhs-opensource</groupId>
+                <artifactId>easy-trans-mybatis-plus-extend</artifactId>
+                <version>${fhs-opensource.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
