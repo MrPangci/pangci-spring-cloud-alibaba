@@ -8,6 +8,7 @@ import com.pangci.commom.exception.enums.GlobalErrorCodeConstants;
 import com.pangci.commom.exception.util.ServiceExceptionUtil;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -16,7 +17,7 @@ import java.util.Objects;
  * @param <T> 数据泛型
  */
 @Data
-public class ResultMessage<T> {
+public class ResultMessage<T> implements Serializable {
 
     /**
      * 错误码
