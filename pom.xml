@@ -35,11 +35,13 @@
         <druid.version>1.2.24</druid.version>
         <mysql.version>8.4.0</mysql.version>
         <mybatis-plus.version>3.5.14</mybatis-plus.version>
+        <mybatis-plus-join.version>1.5.4</mybatis-plus-join.version>
         <jsqlparser.version>3.5.14</jsqlparser.version>
         <dynamic.version>4.3.1</dynamic.version>
         <caffeine.version>3.2.1</caffeine.version>
         <fhs-opensource.version>3.0.6</fhs-opensource.version>
         <google-guava.version>33.4.8-jre</google-guava.version>
+        <jakarta.validation.version>3.1.1</jakarta.validation.version>
     </properties>
 
     <dependencyManagement>
@@ -113,8 +115,13 @@
                 <version>${mybatis-plus.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.github.yulichang</groupId>
+                <artifactId>mybatis-plus-join-boot-starter</artifactId> <!-- MyBatis 联表查询 -->
+                <version>${mybatis-plus-join.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-jsqlparser</artifactId>
+                <artifactId>mybatis-plus-jsqlparser-5.0</artifactId>
                 <version>${jsqlparser.version}</version>
             </dependency>
             <!-- 多数据源 -->
@@ -146,6 +153,13 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${google-guava.version}</version>
+            </dependency>
+
+            <!-- jakarta.validation -->
+            <dependency>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>${jakarta.validation.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
