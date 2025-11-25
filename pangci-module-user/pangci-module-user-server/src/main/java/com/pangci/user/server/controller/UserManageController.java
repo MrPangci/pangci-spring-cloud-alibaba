@@ -11,7 +11,7 @@ public class UserManageController {
 
     @RequestMapping("/getUser/{userId}")
     public ResultMessage getUser(@RequestParam("userId") String userId){
-        ResultMessage resultMessage = new ResultMessage(200,"hello",userId);
+        ResultMessage resultMessage = new ResultMessage();
         return resultMessage;
     }
 }

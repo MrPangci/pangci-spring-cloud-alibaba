@@ -5,10 +5,12 @@ import com.pangci.user.api.user.UserInfoApi;
 import com.pangci.user.api.user.dto.UserInfoRespDTO;
 import org.springframework.stereotype.Component;
 
+import static com.pangci.commom.exception.enums.GlobalErrorCodeConstants.INTERNAL_SERVER_ERROR;
+
 @Component
 public class UserInfoApiFallback implements UserInfoApi {
     @Override
     public ResultMessage<UserInfoRespDTO> getUserBaseInfo(int userId) {
-        return new ResultMessage<>(500,"getUserData不可用，开始服务降级处理",new UserInfoRespDTO());
+        return ResultMessage.error(INTERNAL_SERVER_ERROR);
     }
 }

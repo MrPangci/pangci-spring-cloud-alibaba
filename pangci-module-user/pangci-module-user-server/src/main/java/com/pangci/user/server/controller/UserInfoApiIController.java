@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.concurrent.TimeUnit;
 
+import static com.pangci.commom.exception.enums.GlobalErrorCodeConstants.TOO_MANY_REQUESTS;
+
 @RestController
 @Validated
 public class UserInfoApiIController implements UserInfoApi {
@@ -28,7 +30,7 @@ public class UserInfoApiIController implements UserInfoApi {
     public ResultMessage<UserInfoRespDTO> getUserBaseInfo(int userId) {
         redisTemplate.opsForValue().set("userId",userId, 60, TimeUnit.SECONDS);
         System.out.println(redisTemplate.opsForValue().get("userId"));
-        return new ResultMessage<>(200,"成功",userInfoApiIService.getUserBaseInfo(userId));
+        return ResultMessage.success(userInfoApiIService.getUserBaseInfo(userId));
     }
 
     /**
@@ -38,6 +40,6 @@ public class UserInfoApiIController implements UserInfoApi {
      * @return
      */
     public ResultMessage<UserInfoRespDTO> getUserBaseInfoSentinelBlockHandler(int userId, BlockException  e){
-        return new ResultMessage<>(500,"getUserDataSentinel不可用{}"+e.getMessage(),new UserInfoRespDTO());
+        return ResultMessage.error(TOO_MANY_REQUESTS);
     }
 }
