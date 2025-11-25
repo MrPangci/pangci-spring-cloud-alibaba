@@ -1,4 +1,4 @@
-package com.pangci.commom.pojo;
+package com.pangci.commom.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,6 +1,6 @@
 package com.pangci.user.api.user;
 
-import com.pangci.commom.pojo.ResultMessage;
+import com.pangci.commom.model.ResultMessage;
 import com.pangci.user.api.user.dto.UserInfoRespDTO;
 import com.pangci.user.api.user.fallback.UserInfoApiFallback;
 import io.swagger.v3.oas.annotations.Operation;

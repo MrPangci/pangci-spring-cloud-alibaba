@@ -2,7 +2,7 @@ package com.pangci.user.server.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
-import com.pangci.commom.pojo.ResultMessage;
+import com.pangci.commom.model.ResultMessage;
 import com.pangci.user.api.user.UserInfoApi;
 import com.pangci.user.api.user.dto.UserInfoRespDTO;
 import com.pangci.user.server.service.UserInfoApiIService;

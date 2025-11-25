@@ -1,6 +1,6 @@
 package com.pangci.user.api.user.fallback;
 
-import com.pangci.commom.pojo.ResultMessage;
+import com.pangci.commom.model.ResultMessage;
 import com.pangci.user.api.user.UserInfoApi;
 import com.pangci.user.api.user.dto.UserInfoRespDTO;
 import org.springframework.stereotype.Component;

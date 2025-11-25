@@ -1,4 +1,4 @@
-package com.pangci.commom.pojo;
+package com.pangci.commom.model;
 
 import cn.hutool.core.lang.Assert;
 import com.fasterxml.jackson.annotation.JsonIgnore;
