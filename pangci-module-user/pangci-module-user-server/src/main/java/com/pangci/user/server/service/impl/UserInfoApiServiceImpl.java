@@ -1,7 +1,7 @@
 package com.pangci.user.server.service.impl;
 
 import com.pangci.user.api.user.dto.UserInfoRespDTO;
-import com.pangci.user.server.mapper.UserInfoApiMapper;
+import com.pangci.user.server.mapper.UserInfoMapper;
 import com.pangci.user.server.service.UserInfoApiIService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class UserInfoApiServiceImpl implements UserInfoApiIService {
 
     @Autowired
-    UserInfoApiMapper userInfoApiMapper;
+    UserInfoMapper userInfoApiMapper;
 
     @Override
     public UserInfoRespDTO getUserBaseInfo(int userId) {

@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace = 接口的全限定符 -->
-<mapper namespace="com.pangci.user.server.mapper.UserInfoApiMapper">
+<mapper namespace="com.pangci.user.server.mapper.UserInfoMapper">
     <sql id="FIELDS">
         user_id, user_name, login_name, create_time
     </sql>
