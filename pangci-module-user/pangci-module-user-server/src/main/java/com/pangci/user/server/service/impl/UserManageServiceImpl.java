@@ -10,6 +10,8 @@ import com.pangci.user.server.service.UserManageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service
 public class UserManageServiceImpl implements UserManageService {
 
@@ -18,9 +20,14 @@ public class UserManageServiceImpl implements UserManageService {
 
     @Override
     public void testUpdateUser() {
+        //测试新增
+        UserInfo userInfo = new UserInfo();
+        userInfo=userInfo.builder().userName("张三").password("123456").loginName("zhangsan").createTime(LocalDateTime.now()).deptId("1").build();
+        userInfoMapper.insert(userInfo);
+
         // 测试分页
         SortablePageParam pageParam = new SortablePageParam();
-        pageParam.setPageNo(2);
+        //pageParam.setPageNo(1);
         //分页对象也能指定排序列
         /*List<SortingField> sortingFields=new ArrayList<>();
         sortingFields.add(new SortingField("userId", SortingField.ORDER_ASC));

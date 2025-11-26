@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import com.baomidou.mybatisplus.core.incrementer.IKeyGenerator;
+import com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator;
 import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
 import com.baomidou.mybatisplus.extension.incrementer.*;
 import com.baomidou.mybatisplus.extension.parser.JsqlParserGlobal;
@@ -16,6 +17,7 @@ import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerIntercept
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pangci.commom.utils.JsonUtils;
 import com.pangci.starter.mybatis.core.handler.DefaultDBFieldHandler;
+import com.pangci.starter.mybatis.core.incrementer.UUIDV7IdentifierGenerator;
 import org.apache.ibatis.annotations.Mapper;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
@@ -74,6 +76,12 @@ public class MybatisAutoConfiguration {
         }
         // 找不到合适的 IKeyGenerator 实现类
         throw new IllegalArgumentException(StrUtil.format("DbType{} 找不到合适的 IKeyGenerator 实现类", dbType));
+    }
+
+    @Bean // 重制uuid生成唯一数据库ID 为 UUIDv7 版本
+    @ConditionalOnProperty(prefix = "mybatis-plus.global-config.db-config", name = "id-type", havingValue = "ASSIGN_UUID")
+    public IdentifierGenerator uuidv7IdentifierGenerator() {
+        return new UUIDV7IdentifierGenerator();
     }
 
     @Bean // 特殊：返回结果使用 Object 而不用 JacksonTypeHandler 的原因，避免因为 JacksonTypeHandler 被 mybatis 全局使用！

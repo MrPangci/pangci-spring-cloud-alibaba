@@ -19,6 +19,12 @@
             <scope>provided</scope> <!-- 设置为 provided，只有工具类需要使用到 -->
         </dependency>
 
+        <!-- uuid相关 -->
+        <dependency>
+            <groupId>com.github.f4b6a3</groupId>
+            <artifactId>uuid-creator</artifactId>
+        </dependency>
+
         <!-- swagger -->
         <dependency>
             <groupId>io.swagger.core.v3</groupId>
