@@ -20,5 +20,5 @@ public interface UserInfoApi {
     @Parameters({
             @Parameter(name = "userId",description = "用户ID",example = "1111",required = true)
     })
-    ResultMessage<UserInfoRespDTO> getUserBaseInfo(@PathVariable("userId") int userId);
+    ResultMessage<UserInfoRespDTO> getUserBaseInfo(@PathVariable("userId") String userId);
 }

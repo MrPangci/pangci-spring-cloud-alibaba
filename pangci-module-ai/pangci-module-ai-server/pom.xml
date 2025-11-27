@@ -81,6 +81,15 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- 启用参数名称保留功能 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <parameters>true</parameters>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 

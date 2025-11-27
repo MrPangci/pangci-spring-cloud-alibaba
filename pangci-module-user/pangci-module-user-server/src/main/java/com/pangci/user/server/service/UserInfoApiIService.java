@@ -8,5 +8,5 @@ public interface UserInfoApiIService {
      * @param userId
      * @return
      */
-    UserInfoRespDTO getUserBaseInfo(int userId);
+    UserInfoRespDTO getUserBaseInfo(String userId);
 }

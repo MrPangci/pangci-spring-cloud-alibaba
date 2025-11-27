@@ -1,0 +1,2 @@
+com.pangci.starter.redis.config.RedisAutoConfiguration
+com.pangci.starter.redis.config.CacheAutoConfiguration

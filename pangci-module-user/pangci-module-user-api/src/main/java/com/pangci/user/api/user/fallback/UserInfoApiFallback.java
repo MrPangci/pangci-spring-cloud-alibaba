@@ -10,7 +10,7 @@ import static com.pangci.commom.exception.enums.GlobalErrorCodeConstants.INTERNA
 @Component
 public class UserInfoApiFallback implements UserInfoApi {
     @Override
-    public ResultMessage<UserInfoRespDTO> getUserBaseInfo(int userId) {
+    public ResultMessage<UserInfoRespDTO> getUserBaseInfo(String userId) {
         return ResultMessage.error(INTERNAL_SERVER_ERROR);
     }
 }

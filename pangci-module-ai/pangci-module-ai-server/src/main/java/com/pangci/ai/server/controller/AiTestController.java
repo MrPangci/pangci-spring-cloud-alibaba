@@ -14,6 +14,6 @@ public class AiTestController {
 
     @RequestMapping("/aiTest")
     public ResultMessage aiTest(){
-        return userInfoApi.getUserBaseInfo(1);
+        return userInfoApi.getUserBaseInfo("1");
     }
 }

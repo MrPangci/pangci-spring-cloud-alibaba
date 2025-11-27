@@ -27,7 +27,7 @@ public class UserInfoApiIController implements UserInfoApi {
 
     @Override
     @SentinelResource( value = "getUserBaseInfoSentinel", blockHandler = "getUserBaseInfoSentinelBlockHandler")
-    public ResultMessage<UserInfoRespDTO> getUserBaseInfo(int userId) {
+    public ResultMessage<UserInfoRespDTO> getUserBaseInfo(String userId) {
         redisTemplate.opsForValue().set("userId",userId, 60, TimeUnit.SECONDS);
         System.out.println(redisTemplate.opsForValue().get("userId"));
         return ResultMessage.success(userInfoApiIService.getUserBaseInfo(userId));
@@ -39,7 +39,7 @@ public class UserInfoApiIController implements UserInfoApi {
      * @param e
      * @return
      */
-    public ResultMessage<UserInfoRespDTO> getUserBaseInfoSentinelBlockHandler(int userId, BlockException  e){
+    public ResultMessage<UserInfoRespDTO> getUserBaseInfoSentinelBlockHandler(String userId, BlockException  e){
         return ResultMessage.error(TOO_MANY_REQUESTS);
     }
 }

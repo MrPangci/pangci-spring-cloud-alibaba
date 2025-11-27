@@ -13,7 +13,7 @@ public class UserInfoApiServiceImpl implements UserInfoApiIService {
     UserInfoMapper userInfoApiMapper;
 
     @Override
-    public UserInfoRespDTO getUserBaseInfo(int userId) {
+    public UserInfoRespDTO getUserBaseInfo(String userId) {
         return userInfoApiMapper.getUserBaseInfo(userId);
     }
 }
