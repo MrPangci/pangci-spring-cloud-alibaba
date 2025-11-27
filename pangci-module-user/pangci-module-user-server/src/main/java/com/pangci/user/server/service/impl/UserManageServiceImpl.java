@@ -27,6 +27,7 @@ public class UserManageServiceImpl implements UserManageService {
 
         //测试删除
         userInfoMapper.delete(UserInfo::getUserId,"0");
+        //userInfoMapper.delete(null); //测试删除所有,会被拦截报错
 
         // 测试分页
         SortablePageParam pageParam = new SortablePageParam();
