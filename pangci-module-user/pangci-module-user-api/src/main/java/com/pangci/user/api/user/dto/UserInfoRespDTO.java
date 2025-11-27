@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Data
 public class UserInfoRespDTO {
     @Schema(description = "用户Id", required = true,example = "1")
-    private String userId;
+    private Long id;
     @Schema(description = "用户姓名", required = true,example = "某XX")
     private String userName;
     @Schema(description = "用户登录名", required = true,example = "admin")

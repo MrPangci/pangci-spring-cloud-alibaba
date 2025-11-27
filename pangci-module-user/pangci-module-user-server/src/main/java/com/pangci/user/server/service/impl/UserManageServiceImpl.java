@@ -22,11 +22,11 @@ public class UserManageServiceImpl implements UserManageService {
     public void testUpdateUser() {
         //测试新增
         UserInfo userInfo = new UserInfo();
-        userInfo=userInfo.builder().userName("张三").password("123456").loginName("zhangsan").createTime(LocalDateTime.now()).deptId("1").build();
+        userInfo=userInfo.builder().userName("张三").password("123456").loginName("zhangsan").deptId(1L).build();
         userInfoMapper.insert(userInfo);
 
         //测试删除
-        userInfoMapper.delete(UserInfo::getUserId,"0");
+        //userInfoMapper.delete(UserInfo::getId,"0");
         //userInfoMapper.delete(null); //测试删除所有,会被拦截报错
 
         // 测试分页
@@ -37,7 +37,7 @@ public class UserManageServiceImpl implements UserManageService {
         sortingFields.add(new SortingField("userId", SortingField.ORDER_ASC));
         pageParam.setSortingFields(sortingFields);*/
         LambdaQueryWrapperX<UserInfo> wrapper = new LambdaQueryWrapperX<>();
-        wrapper.geIfPresent(UserInfo::getUserId,28).orderByDesc(UserInfo::getUserId);//相当于where id=1
+        wrapper.geIfPresent(UserInfo::getId,28).orderByDesc(UserInfo::getId);//相当于where id=1
         PageResult<UserInfo> userInfoPageResult = userInfoMapper.selectPage(pageParam, wrapper);
         System.out.println(JsonUtils.toJsonString(userInfoPageResult));
     }

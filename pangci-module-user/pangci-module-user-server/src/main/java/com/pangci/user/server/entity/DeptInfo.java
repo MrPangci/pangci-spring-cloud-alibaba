@@ -1,29 +1,55 @@
 package com.pangci.user.server.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+
+import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
-@TableName("user_info")
+/**
+ * 
+ * @TableName dept_info
+ */
+@TableName(value ="dept_info")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class UserInfo {
-    @TableId //主键字段,默认为id的情况下无需配置该注解
+public class DeptInfo {
+    /**
+     * 部门id
+     */
+    @TableId
     private Long id;
-    private String userName;
-    private String password;
-    private String loginName;
+
+    /**
+     * 部门名称
+     */
+    private String deptName;
+
+    /**
+     * 上级部门ID
+     */
+    private Long parentId;
+
+    /**
+     * 创建时间
+     */
     @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
+
+    /**
+     * 更新时间
+     */
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
-    private Long deptId;
-    @TableLogic //逻辑删除字段
+
+    /**
+     * 删除标识
+     */
+    @TableLogic
     private Integer deleted;
 }

@@ -41,6 +41,18 @@ public class DefaultDBFieldHandler implements MetaObjectHandler {
             if (Objects.nonNull(userId) && Objects.isNull(baseDO.getUpdater())) {
                 baseDO.setUpdater(userId.toString());
             }
+        }else {
+            LocalDateTime current = LocalDateTime.now();
+            // 创建时间为空，则以当前时间为更新时间
+            Object modifyCreateTime = getFieldValByName("createTime", metaObject);
+            if (Objects.isNull(modifyCreateTime)) {
+                setFieldValByName("createTime", current, metaObject);
+            }
+            // 更新时间为空，则以当前时间为更新时间
+            Object modifyUpdateTime = getFieldValByName("updateTime", metaObject);
+            if (Objects.isNull(modifyUpdateTime)) {
+                setFieldValByName("updateTime", current, metaObject);
+            }
         }
     }
 
