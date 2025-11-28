@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = "com.pangci")
 @SpringBootApplication
 @EnableDiscoveryClient
-@MapperScan("com.pangci.user.server.mapper")
 public class PangCiUserApplication {
     public static void main(String[] args) {
         SpringApplication.run(PangCiUserApplication.class, args);
