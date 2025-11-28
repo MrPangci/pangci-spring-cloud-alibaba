@@ -32,6 +32,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.pangci</groupId>
+            <artifactId>pangci-starter-thread</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>

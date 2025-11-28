@@ -36,7 +36,7 @@ public class CacheAutoConfiguration {
      */
     @Bean
     @Primary
-    public RedisCacheConfiguration redisCacheConfiguration(org.springframework.boot.autoconfigure.cache.CacheProperties cacheProperties) {
+    public RedisCacheConfiguration redisCacheConfiguration(CacheProperties cacheProperties) {
         RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig();
         // 设置使用 : 单冒号，而不是双 :: 冒号，避免 Redis Desktop Manager 多余空格
         // 详细可见 https://blog.csdn.net/chuixue24/article/details/103928965 博客
