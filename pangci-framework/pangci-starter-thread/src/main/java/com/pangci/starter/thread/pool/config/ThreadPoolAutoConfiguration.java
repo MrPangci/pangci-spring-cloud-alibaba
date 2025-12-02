@@ -1,6 +1,5 @@
 package com.pangci.starter.thread.pool.config;
 
-import cn.hutool.core.thread.ThreadFactoryBuilder;
 import com.pangci.starter.thread.pool.core.MyThreadPoolExecutor;
 import com.pangci.starter.thread.pool.core.enums.HandlerEnum;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
@@ -8,10 +7,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.RejectedExecutionHandler;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * 线程池自动配置类
@@ -35,7 +31,7 @@ public class ThreadPoolAutoConfiguration {
                 threadPoolProperties.getKeepAliveTime().getSeconds(),
                 TimeUnit.SECONDS,
                 new LinkedBlockingQueue<>(threadPoolProperties.getQueueSize()),
-                new ThreadFactoryBuilder().build(),
+                Executors.defaultThreadFactory(),
                 rejectedExecutionHandler);
         return myThreadPoolExecutor;
     }
