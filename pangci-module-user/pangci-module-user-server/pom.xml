@@ -38,6 +38,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.pangci</groupId>
+            <artifactId>pangci-starter-job</artifactId>
+            <version>${revision}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
@@ -52,6 +58,11 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
+        <!-- 参数校验 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
         <!-- Nacos注册中心 -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
