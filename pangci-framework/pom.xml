@@ -18,6 +18,7 @@
         <module>pangci-starter-mybatis</module>
         <module>pangci-starter-thread</module>
         <module>pangci-starter-job</module>
+        <module>pangci-starter-excel</module>
     </modules>
 
 </project>
