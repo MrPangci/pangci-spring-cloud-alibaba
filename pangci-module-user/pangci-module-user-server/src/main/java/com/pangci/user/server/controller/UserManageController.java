@@ -4,6 +4,7 @@ import com.pangci.commom.model.ResultMessage;
 import com.pangci.starter.thread.pool.core.MyThreadPoolExecutor;
 import com.pangci.user.server.service.UserManageService;
 import jakarta.annotation.Resource;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,9 @@ public class UserManageController {
     @Resource
     private MyThreadPoolExecutor myThreadPoolExecutor;
 
+    @Autowired
+    private AmqpTemplate rabbitTemplate;
+
     @GetMapping("/test")
     public ResultMessage test(){
         userManageService.testUpdateUser();
@@ -32,6 +36,11 @@ public class UserManageController {
                 System.out.println("执行异步任务:"+random.nextInt());
             });
         }
+    }
+
+    @GetMapping("/test3")
+    public void test3(){
+        rabbitTemplate.convertAndSend("helloQueue", "Hello World!");
     }
 
 }
