@@ -21,11 +21,11 @@ public class MyGlobalFilter implements GlobalFilter, Ordered {
         return chain.filter(exchange).then(Mono.fromRunnable(()->{
             Long beginRequestTime = exchange.getAttribute(BEGIN_REQUEST_TIME);
             if (beginRequestTime != null){
-                log.info("请求接口IP: " + exchange.getRequest().getURI().getHost());
-                log.info("请求接口PORT: " + exchange.getRequest().getURI().getPort());
-                log.info("请求接口URL: " + exchange.getRequest().getURI().getPath());
-                log.info("请求接口URL参数: " + exchange.getRequest().getURI().getRawQuery());
-                log.info("请求接口时长: " + (System.currentTimeMillis() - beginRequestTime) + "ms");
+                log.info("请求接口IP: {}", exchange.getRequest().getURI().getHost());
+                log.info("请求接口PORT: {}", exchange.getRequest().getURI().getPort());
+                log.info("请求接口URL: {}", exchange.getRequest().getURI().getPath());
+                log.info("请求接口URL参数: {}", exchange.getRequest().getURI().getRawQuery());
+                log.info("请求接口时长: {}", (System.currentTimeMillis() - beginRequestTime) + "ms");
             }
         }));
     }
