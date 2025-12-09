@@ -1,3 +1,4 @@
+/*
 package com.pangci.starter.excel.utils;
 
 import cn.idev.excel.FastExcelFactory;
@@ -8,12 +9,15 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.List;
 
+*/
 /**
  * Excel 工具类
- */
+ *//*
+
 public class ExcelUtil {
 
-    /**
+    */
+/**
      * 将列表以 Excel 响应给前端
      *
      * @param response  响应
@@ -23,7 +27,8 @@ public class ExcelUtil {
      * @param data      数据列表哦
      * @param <T>       泛型，保证 head 和 data 类型的一致性
      * @throws IOException 写入失败的情况
-     */
+     *//*
+
     public static <T> void write(HttpServletResponse response, String filename, String sheetName,
                                  Class<T> head, List<T> data) throws IOException {
         // 输出 Excel
@@ -45,3 +50,4 @@ public class ExcelUtil {
     }
 
 }
+*/
