@@ -19,6 +19,8 @@
         <module>pangci-starter-thread</module>
         <module>pangci-starter-job</module>
         <module>pangci-starter-excel</module>
+        <module>pangci-starter-security</module>
+        <module>pangci-starter-mq</module>
     </modules>
 
 </project>

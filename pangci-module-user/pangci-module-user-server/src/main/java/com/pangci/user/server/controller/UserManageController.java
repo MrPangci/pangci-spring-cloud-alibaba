@@ -40,7 +40,12 @@ public class UserManageController {
 
     @GetMapping("/test3")
     public void test3(){
-        rabbitTemplate.convertAndSend("helloQueue", "Hello World!");
+        rabbitTemplate.convertAndSend("helloExchange","hello.#", "Hello World!");
+    }
+
+    @GetMapping("/test4")
+    public void test4(){
+        rabbitTemplate.convertAndSend("helloExchange","hello2.#", "dead test!");
     }
 
 }
